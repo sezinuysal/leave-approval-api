@@ -1,0 +1,10 @@
+# Local PostgreSQL for the "postgres" profile.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: leave_approval
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
